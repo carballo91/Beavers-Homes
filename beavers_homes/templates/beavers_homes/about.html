@@ -1,0 +1,39 @@
+{% extends "beavers_homes/layout.html" %}
+{% block body %}
+<section id="about">
+    <div class="container">
+        <header class="about-header">
+            <h1>About Us</h1>
+        </header>
+        <div class="about-article">
+            <article>
+                <h2>Who We Are</h2>
+                <p>
+                    Welcome to <span>Beavers Homes</span>, your trusted partner for expert electrical solutions. Based in <span>Dayton, OH</span>, we specialize in delivering top-quality residential services to keep your home powered and safe.
+                </p>
+            </article>
+            <article>
+                <h2>Our Mission</h2>
+                <p>
+                    At <strong>Beavers Homes</strong>, our mission is simple: to deliver <span>safe, reliable, and efficient electrical solutions</span> tailored to your unique needs. Whether it’s a small repair, a complex installation, or a complete system upgrade, we are committed to exceeding your expectations with precision and professionalism.
+                </p>
+            </article>
+        </div>
+        <div class="about-article">
+            <article>
+                <h2>Service Areas</h2>
+                <p class="text-center">
+                    We proudly serve <strong>Dayton, OH and surrounding areas</strong>, bringing professional and reliable electrical services to your doorstep.
+                </p>
+                <h2>Let’s Work Together</h2>
+                <p class="text-center">
+                    When you need a reliable electrician, turn to <strong>Beavers Homes</strong> for solutions that shine. Contact us today to schedule a consultation or request a free estimate.
+                </p>
+                <a href="{% url 'contact' %}" class="primary-btn">Contact Us</a>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

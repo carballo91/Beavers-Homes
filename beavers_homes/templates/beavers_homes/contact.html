@@ -1,0 +1,18 @@
+{% extends "beavers_homes/layout.html" %}
+{% block body %}
+<section id="contact">
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
+        </header>
+        
+        <!-- Contact Form -->
+        <form method="POST" action="{% url 'contact' %}" class="contact-form">
+            {% csrf_token %}
+            {{ form }}  <!-- Renders the form fields -->
+            <button type="submit" class="primary-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
