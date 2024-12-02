@@ -6,7 +6,11 @@
             <h1>Contact Us</h1>
             <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
         </header>
-        
+        {% if message %}
+            <div id="message">
+                <p>Thanks for contacting us</p>
+            </div>
+        {% endif %}
         <!-- Contact Form -->
         <form method="POST" action="{% url 'contact' %}" class="contact-form">
             {% csrf_token %}
