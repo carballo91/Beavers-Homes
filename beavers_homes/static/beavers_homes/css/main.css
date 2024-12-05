@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
 html {
     font-size: 100%; /* Typically 16px */
 }
@@ -190,6 +194,10 @@ section .container {
 
 .button:hover {
     background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+#hero, #menu {
+    margin-top: -1px;
 }
 
 /* Hero Section Styling */
