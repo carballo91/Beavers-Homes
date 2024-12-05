@@ -80,7 +80,7 @@ section .container {
     transform: translate(-50%, 0%);
 }
 
-.navbar-brand, h1, h6, #hero-content span { color: #3FA9F5 ; }
+.navbar-brand, h1,h2, h6, #hero-content span { color: #3FA9F5 ; }
 
 .active, .nav-link:hover { color: #3FA9F5 !important; }
 
@@ -311,7 +311,7 @@ header {
     text-align: center;
 }
 
-header h1 {
+header h2 {
     margin: 0;
     text-transform: uppercase;
     font-weight: bold;
