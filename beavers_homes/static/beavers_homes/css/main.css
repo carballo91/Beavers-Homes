@@ -631,6 +631,10 @@ p {
 
 @media (min-width: 992px) { 
     /* Your styles for large devices */
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
     .navbar-collapse {
         position: static;
     }
