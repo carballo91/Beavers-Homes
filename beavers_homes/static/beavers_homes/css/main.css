@@ -624,9 +624,6 @@ p {
     .footer-container {
         flex-direction: row;
     }
-    #hero {
-        height: 80vh;
-    }
     .hero-overlay {
         justify-content: flex-start;
         align-items: end;
