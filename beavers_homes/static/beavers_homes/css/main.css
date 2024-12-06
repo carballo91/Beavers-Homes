@@ -112,6 +112,7 @@ section .container {
 
 .nav-link {
     transition: ease-in .2s;
+    padding: .5rem !important;
 }
 
 #navbarNav { justify-content: center; }
@@ -161,7 +162,7 @@ section .container {
 }
 
 /* Feature Headings */
-.feature h6, .service-card h6 {
+.feature h3, .service-card h3 {
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -342,9 +343,8 @@ header h2 {
     height: 5px;
 }
 
-.feature h6 {
+.feature h3, .service-card h3 {
     color: #232323; /* Dark Gray */
-    font-size: 1.25rem;
     margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: bold;
@@ -379,14 +379,6 @@ header h2 {
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.service-card h6 {
-    color: #232323; /* Dark Gray */
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
 }
 
 .service-card p {
@@ -603,10 +595,6 @@ p {
 
     .nav-item {
         margin: 0 1rem;
-    }
-
-    .nav-link {
-        padding: .5rem !important;
     }
     
   }
