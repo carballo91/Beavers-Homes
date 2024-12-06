@@ -19,6 +19,7 @@ h1, .feature-header, h6, #services { text-align: center; }
 address { 
     font-size: 0.65em; /* 12px */ 
     font-style: italic; 
+    color: #232323;
 }
 
 section .container {
@@ -209,6 +210,7 @@ header h2 {
     margin: 0;
     text-transform: uppercase;
     font-weight: bold;
+    color: #063B60;
 }
 
 /* Features Section */
@@ -237,10 +239,9 @@ header h2 {
 }
 
 .feature h3, .service-card h3 {
-    color: #232323; /* Dark Gray */
+    color: #063B60; /* Dark Gray */
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
 .feature p {
