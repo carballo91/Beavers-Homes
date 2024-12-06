@@ -200,24 +200,6 @@ section .container {
 }
 
 /* Hero Section Styling */
-#hero {
-    position: relative;
-    height: 50vh;
-    /*height: 70vh; /* Full viewport height */
-    background: url("/static/beavers_homes/images/hero-image.jpg");
-    background-size: cover;
-    background-position: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #hero img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
   .hero-overlay {
     position: absolute;
     top: 0;
