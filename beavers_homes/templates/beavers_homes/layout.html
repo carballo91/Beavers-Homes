@@ -43,7 +43,7 @@
           "@type": "LocalBusiness",
           "name": "Beavers Homes LLC",
           "description": "Innovative electrical solutions in Dayton, OH. Trusted by homeowners and businesses alike.",
-          "image": "{% static 'beavers_homes/images/logo.svg' %}",
+          "image": "https://www.beavershomesllc.com/static/beavers_homes/images/logo.svg",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dayton",
@@ -87,7 +87,7 @@
                 "position": 4,
                 "name": "Contact",
                 "item": "https://beavershomes.com/contact"
-              },
+              }
             ]
           }
           </script>
@@ -95,7 +95,8 @@
             #hero {
               position: relative;
               height: 50vh;
-              /*height: 70vh; /* Full viewport height */
+              /*height: 70vh; Full viewport height */
+              min-height: 300px;
               background: url("/static/beavers_homes/images/hero-image-sm.webp");
               background-size: cover;
               background-position: top;
@@ -109,7 +110,7 @@
               left: 0;
               width: 100%;
               height: 100%;
-              /*background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+              /*background: rgba(0, 0, 0, 0.5); Dark overlay */
               display: flex;
               justify-content: center;
               align-items: center;
@@ -119,7 +120,7 @@
               max-width: 800px;
               padding: 20px;
 
-              /*background: rgba(255, 255, 255, 0.1); /* Semi-transparent box 
+              /*background: rgba(255, 255, 255, 0.1); Semi-transparent box 
               border-radius: 10px;
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);*/
             }
