@@ -9,12 +9,12 @@ def validate_phone_number(value):
         raise ValidationError('Enter a valid phone number.')
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100,required=True, widget=forms.TextInput(attrs={"placeholder": "Enter your name", "class":"form-control"}))
+    name = forms.CharField(max_length=100,required=True, widget=forms.TextInput(attrs={"class":"form-control"}))
     phone_number = forms.CharField(
         max_length=15,  # Allow space for area code, dashes, etc.
         validators=[validate_phone_number],
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number: 555-555-5555'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '###-###-####'})
     )
-    email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder":"Enter your email", "class":"form-control"}))
-    address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"placeholder": "Enter your address", "class":"form-control"}))
-    message = forms.CharField(widget=forms.Textarea(attrs={"placeholder":"Enter your message", "class":"form-control","rows":5}), required=True)
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"class":"form-control"}))
+    address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={"class":"form-control"}))
+    message = forms.CharField(widget=forms.Textarea(attrs={"class":"form-control","rows":5}), required=True)
