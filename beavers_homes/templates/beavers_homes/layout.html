@@ -8,8 +8,8 @@
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Reliable Electricians in Dayton, OH | Beavers Homes LLC</title>
-      <meta name="description" content="Looking for reliable electricians in Dayton, OH? Beavers Homes offers innovative and trusted electrical solutions for homes and businesses. Contact us today!">
+      <title>{% block title %}{% endblock %}</title>
+      <meta name="description" content="{% block meta_description %}{% endblock %}">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="apple-touch-icon" sizes="180x180" href="{% static 'beavers_homes/images/favicon/apple-touch-icon.png' %}">
       <link rel="icon" type="image/png" sizes="32x32" href="{% static 'beavers_homes/images/favicon/favicon-32x32.png' %}">
@@ -170,6 +170,7 @@
 
             #hero-content h2 {
                 animation: fadeInDown 3s ease-in;
+                color: #FFF
             }
               
             @keyframes fadeInDown {
@@ -295,7 +296,7 @@
             <!-- Contact Information -->
             <div class="footer-section">
                 <h3>Get in Touch</h3>
-                <p><i class="fa fa-envelope"></i> BeaversHomes@outlook.com</p>
+                <p><i class="fa fa-envelope"></i> beavershomesllc@gmail.com</p>
                 <p><i class="fa fa-map-marker"></i> Dayton, OH</p>
             </div>
         </div>
