@@ -1,4 +1,6 @@
 {% extends "beavers_homes/layout.html" %}
+{% block title %} Contact Us | Reliable Electricians in Dayton, OH | Beavers Homes LLC {% endblock %}
+{% block meta_description %} Get in touch with Beavers Homes LLC for expert electrical solutions in Dayton, OH. Contact us today to schedule a consultation, request a free estimate, or learn more about our services. {% endblock %}
 {% block body %}
 <section id="contact">
     <div class="container">
@@ -6,9 +8,10 @@
             <h1>Contact Us</h1>
             <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
         </header>
-        {% if message %}
+        {% if request.GET.success %}
             <div id="message">
-                <p>Thanks for contacting us</p>
+                <p>Thank you for reaching out to us!</p>
+                <p>We appreciate your message and will get back to you as soon as possible.</p>
             </div>
         {% endif %}
         <!-- Contact Form -->
