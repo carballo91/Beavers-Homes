@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # or load_dotenv(BASE_DIR / '.env')
 """
 Django settings for beavers project.
 
@@ -16,17 +19,21 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Add your keys after creating the widget in Cloudflare
+TURNSTILE_SITE_KEY   = os.getenv('TURNSTILE_SITE_KEY')
+TURNSTILE_SECRET_KEY = os.getenv('TURNSTILE_SECRET_KEY')
 
-ALLOWED_HOSTS = ['www.beavershomesllc.com']
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
