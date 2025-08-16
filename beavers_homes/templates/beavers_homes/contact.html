@@ -15,11 +15,36 @@
             </div>
         {% endif %}
         <!-- Contact Form -->
-        <form method="POST" action="{% url 'contact' %}" class="contact-form">
+        <form method="POST" action="{% url 'contact' %}" class="contact-form" id="contact-form">
             {% csrf_token %}
             {{ form }}  <!-- Renders the form fields -->
+            <div class="cf-turnstile"></div>
             <button type="submit" class="primary-btn">Send Message</button>
         </form>
     </div>
 </section>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(e) {
+    // stop default submission until token is returned
+    e.preventDefault();
+    const siteKey = "{{ TURNSTILE_SITE_KEY }}";
+    turnstile.render('.cf-turnstile', {
+      sitekey: siteKey,
+      size: "invisible",
+      callback: function(token) {
+        const hidden = document.querySelector('[name="turnstile_token"]');
+        hidden.value = token;
+        form.submit();  // resume after token populated
+      }
+    });
+  });
+
+});
+</script>
 {% endblock %}
