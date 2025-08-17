@@ -2,10 +2,10 @@ from django import forms
 import re
 from django.core.exceptions import ValidationError
 import requests
-import logging
+# import logging
 from django.conf import settings
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 # Custom validator for phone number (US format)
 def validate_phone_number(value):
@@ -62,17 +62,17 @@ class ContactForm(forms.Form):
 
         result = response.json()
         
-        print("CLOUDFLARE RESULT:", result)
+        # print("CLOUDFLARE RESULT:", result)
 
 
-        #👇 Log everything returned from Cloudflare
-        logger.info("Turnstile result: %s", result)
+        # #👇 Log everything returned from Cloudflare
+        # logger.info("Turnstile result: %s", result)
 
         if not result.get("success"):
             raise forms.ValidationError("Captcha validation failed. Please try again.")
 
         # 2. OPTIONAL: fail if hostname does not match your domain
-        expected_hostname = "beavershomes.com"
+        expected_hostname = "www.beavershomesllc.com"
         if result.get("hostname") not in (expected_hostname, "127.0.0.1", "localhost"):
             raise forms.ValidationError("Invalid captcha hostname.")
 
