@@ -19,6 +19,28 @@
   </div>
 
   </div>
+  <div class="container">
+    <div class="service-intro-box">
+      <p>
+        At <strong>Beavers Homes LLC</strong>, we provide reliable electrical solutions to homes and businesses across <strong>Dayton, OH</strong>. From repairs to upgrades, our licensed electricians deliver safe, dependable service at fair prices. <a href="{% url 'contact' %}">Contact our Dayton team</a> today.
+      </p>
+
+      <div class="intro-full-text" style="display:none;">
+        <p>
+          Our experienced team handles everything from panel upgrades and lighting installs to emergency troubleshooting and EV charger wiring. As a locally owned company, we take pride in top-quality craftsmanship, punctual service, and open communication.
+        </p>
+        <p>
+          We proudly serve Dayton, Oakwood, Kettering, Beavercreek, Centerville, Riverside, and surrounding Miami Valley areas. Whether you need a small fix or a full electrical project, Beavers Homes LLC is your trusted Dayton electrician.
+        </p>
+      </div>
+      <button class="toggle-intro">Show More</button>
+    </div>
+  </div>
+  
+
+
+
+
     
   <section>
     <div class="container">
@@ -176,5 +198,54 @@
           </div>
         </div>
     </div>
+    <p class="text-center mt-4">
+      <a href="{% url 'contact' %}" class="primary-btn">Request a Free Electrical Quote</a>
+    </p>
 </section>
+<section id="faq">
+  <div class="container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <button class="faq-question">Do you offer free estimates on electrical work?</button>
+      <div class="faq-answer">
+        <p>Yes, we provide free, no-obligation estimates on all services — from panel upgrades to light fixture installations. Simply <a href="{% url 'contact' %}">get in touch</a> with your project details to schedule a quote.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Are your electricians licensed and insured?</button>
+      <div class="faq-answer">
+        <p>Yes — all Beavers Homes electricians are fully licensed, insured, and compliant with Ohio safety and electrical codes.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Which areas around Dayton do you service?</button>
+      <div class="faq-answer">
+        <p>Besides Dayton, we serve Oakwood, Kettering, Beavercreek, Centerville, Riverside, and surrounding communities in the Miami Valley.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = q.nextElementSibling;
+      item.classList.toggle('active');
+      answer.style.display = item.classList.contains('active') ? 'block' : 'none';
+    });
+  });
+
+  document.querySelector('.toggle-intro').addEventListener('click', function() {
+    const fullText = document.querySelector('.intro-full-text');
+    const isHidden = fullText.style.display === 'none';
+    fullText.style.display = isHidden ? 'block' : 'none';
+    this.textContent = isHidden ? 'Show Less' : 'Show More';
+  });
+</script>
+
+
 {% endblock %}
