@@ -31,7 +31,6 @@
         turnstile.render('.cf-turnstile', {
             sitekey: siteKey,
             callback: function(token) {
-                console.log('Turnstile token:', token);
                 const hidden = document.querySelector('[name="turnstile_token"]');
                 hidden.value = token;
                 const btn = document.getElementById('form-button');
@@ -47,3 +46,4 @@
     };
 </script>
 {% endblock %}
+
