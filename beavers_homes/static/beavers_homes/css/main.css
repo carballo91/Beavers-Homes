@@ -543,6 +543,11 @@ p {
     font-family: "Font Awesome 5 Brands";
 }
 
+#form-button {
+    pointer-events: none;
+    opacity: .5;
+}
+
 /* CSS from the previous response */
 .contact-form .form-control {
     width: 100%;
@@ -640,3 +645,4 @@ p {
   }
   
   
+
