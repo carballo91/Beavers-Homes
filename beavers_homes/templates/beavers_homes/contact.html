@@ -19,32 +19,31 @@
             {% csrf_token %}
             {{ form }}  <!-- Renders the form fields -->
             <div class="cf-turnstile"></div>
-            <button type="submit" class="primary-btn">Send Message</button>
+            <button type="submit" class="primary-btn" id="form-button" disabled>Send Message</button>
         </form>
     </div>
 </section>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function(e) {
-    // stop default submission until token is returned
-    e.preventDefault();
-    const siteKey = "{{ TURNSTILE_SITE_KEY }}";
-    turnstile.render('.cf-turnstile', {
-      sitekey: siteKey,
-      size: "invisible",
-      callback: function(token) {
-        const hidden = document.querySelector('[name="turnstile_token"]');
-        hidden.value = token;
-        form.submit();  // resume after token populated
-      }
-    });
-  });
-
-});
+  const siteKey = "{{ TURNSTILE_SITE_KEY }}";
+  window.onload = function() {
+        turnstile.render('.cf-turnstile', {
+            sitekey: siteKey,
+            callback: function(token) {
+                console.log('Turnstile token:', token);
+                const hidden = document.querySelector('[name="turnstile_token"]');
+                hidden.value = token;
+                const btn = document.getElementById('form-button');
+                btn.disabled = false;
+                btn.style.pointerEvents = 'auto';
+                btn.style.opacity = 1;
+                // Handle successful verification
+            },
+            'error-callback': function(errorCode) {
+                console.error('Turnstile error:', errorCode);
+            }
+        });
+    };
 </script>
 {% endblock %}
